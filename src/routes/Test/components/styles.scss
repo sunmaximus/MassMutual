@@ -1,0 +1,91 @@
+.row.custom-tab {
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    border: 1px solid rgba(34,36,38,.15);
+    div {
+        width: 100%;
+        justify-content: center;   
+        .ui.secondary.pointing.menu {
+            border-bottom: 0px;
+            display: flex;
+            justify-content: space-around;   
+            a.item {
+                justify-content: center;   
+            }
+        }
+    }
+}
+
+.row div.seven.wide.column {
+    display: flex;
+    justify-content: flex-end;
+    div.top-story-picture{
+        width: 185px;
+        height: 185px;
+        background-color: red;        
+    }
+}
+
+div.credit-top-story-space {
+    padding-top: 20px;
+}
+
+.ui.card>.extra, .ui.cards>.card>.extra, .ui.card>.content {
+    border-top: 0px;        
+}
+
+div.ui.segment.custom-right-top-article {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    div.custom-right-top-item {
+        width: inherit;
+        word-wrap: break-word;
+        align-self: flex-end;
+    }
+
+    div.custom-right-top-item {
+        align-self: flex-start
+    }
+}
+
+div.ui.segment.custom-list-container {
+   padding: 0;
+   div.custom-list {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        flex-direction: row;
+        div.custom-list-left-picture {
+            justify-content: flex-start;
+            height: inherit;
+            width: 25%;
+            background-color: rgb(233, 235, 238);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            img.ui.image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        div.custom-list-right {
+            display: flex;
+            padding: 20px;
+            width: inherit;
+            height: inherit;
+            div.custom-list-right-content {
+                height: 100%;
+                width: 100%;
+                p.content-bottom {
+                    bottom: 0px;
+                    position: absolute;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    } 
+}
