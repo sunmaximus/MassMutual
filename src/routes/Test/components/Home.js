@@ -6,9 +6,11 @@ import {
 } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
-import TopStoryRight from './TopStoryRight'
+import TopStoryLeft from './TopStoryLeft'
 import TopTwoStoriesRight from './TopTwoStoriesRight'
 import ListOfStories from './ListOfStories'
+
+import nyt from '../assets/nyt.png'
 
 import './styles.scss'
 
@@ -31,27 +33,46 @@ class Home extends Component {
     console.log(this.props)
     const { newYorkTime } = this.props
     return (
-      <Grid.Row>
-        <Container style={{
-          padding: '5% 5%'
-        }}>
-          <Header as='h1'>Top Stories</Header>
+      <Grid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+        <Grid.Row>
+          <Container>
+            <Header as='h1'>Top Stories</Header>
 
-          <Grid columns={2} divided>
-            <Grid.Row stretched>
-              <TopStoryRight
-                firstStory={newYorkTime[0]}
-              />
+            <Grid>
+              <div className='custom-top-stories-container' style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                <div className='left'>
+                  <div className='top'>
+                    <div className='right'>
+                      <h2>Title</h2>
+                      <p>by: ss</p>
+                    </div>
+                    <div className='left'>
+                      <img style={{ height: '100%', width: '100%' }} src={nyt} />
+                    </div>
+                  </div>
+                  <div className='bottom'>
+                        dwedwe
+                    </div>
+                </div>
 
-              <TopTwoStoriesRight
-                secondStory={newYorkTime[1]}
-                thirdStory={newYorkTime[2]}
-                  />
-            </Grid.Row>
-            {this.renderStories()}
-          </Grid>
-        </Container>
-      </Grid.Row>
+                <div className='right'>
+                  <div className='custom-right-container'>
+                    <div className='top'>
+                        wdwedwe
+                    </div>
+                    <div className='bottom'>
+                        dwedew
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {this.renderStories()}
+            </Grid>
+          </Container>
+        </Grid.Row>
+      </Grid>
     )
   }
 }

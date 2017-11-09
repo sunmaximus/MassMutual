@@ -20,7 +20,7 @@ class TopTwoStoriesRight extends Component {
       isLoading = true
     }
     return (
-      <Grid.Column width={6} style={{ paddingRight: '0px', width: '354px' }}>
+      <Grid.Column width={6} style={{ paddingRight: '0px', width: '354px', float: 'right' }}>
         <Segment className='custom-right-top-article'>
           <div className='custom-right-top-item'>
             {isLoading ? <div /> : <h3>{shortenTitle(secondStory.headline.main)}</h3>}

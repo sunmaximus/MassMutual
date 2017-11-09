@@ -8,7 +8,7 @@ import {
 
 import nyt from '../assets/nyt.png'
 
-class TopStoryRight extends Component {
+class TopStoryLeft extends Component {
   render () {
     const { firstStory } = this.props
     let isLoading = false
@@ -17,7 +17,7 @@ class TopStoryRight extends Component {
       return <div>loading...</div>
     } else if (firstStory === {}) isLoading = true
     return (
-      <Grid.Column width={10} style={{ paddingLeft: '0px' }}>
+      <Grid.Column width={10}>
         <Segment.Group style={{ height: '437px' }}>
           <Segment style={{ height: '50%', backgroundColor: 'rgb(194, 201, 212)' }}>
             <Grid>
@@ -47,7 +47,7 @@ class TopStoryRight extends Component {
   }
 }
 
-TopStoryRight.propTypes = {
+TopStoryLeft.propTypes = {
   firstStory: PropTypes.object
 }
 
@@ -74,4 +74,4 @@ const shortenSnippet = (string) => {
   return `${string.slice(0, 400)}...`
 }
 
-export default TopStoryRight
+export default TopStoryLeft
