@@ -15,7 +15,7 @@ import './styles.scss'
 class Home extends Component {
   static propTypes = {
     newYorkTime: PropTypes.array.isRequired,
-    // routes: PropTypes.object.isRequired,
+    initializeNewYorkTime: PropTypes.func.isRequired
   }
   componentWillMount () {
     this.props.initializeNewYorkTime()

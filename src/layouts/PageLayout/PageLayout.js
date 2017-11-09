@@ -1,19 +1,24 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import PropTypes from 'prop-types'
-import './PageLayout.scss'
+import {
+  Container,
+  Grid,
+} from 'semantic-ui-react'
 
 export const PageLayout = ({ children }) => (
-  <div className='container text-center'>
+  <div>
     <h1>React Redux Starter Kit</h1>
-    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
+    <IndexLink to='/'>Home</IndexLink>
     {' · '}
-    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
+    <Link to='/counter'>Counter</Link>
     {' . '}
-    <Link to='/test' activeClassName='page-layout__nav-item--active'>test</Link>
-    <div className='page-layout__viewport'>
-      {children}
-    </div>
+    <Link to='/test'>test</Link>
+    <Container>
+      <Grid>
+        {children}
+      </Grid>
+    </Container>
   </div>
 )
 PageLayout.propTypes = {
