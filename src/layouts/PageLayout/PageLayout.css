@@ -8,14 +8,15 @@
 }
 
 div.black-box-container-top {
-  width: 100%; 
-  height: 84px; 
+  width: 100%;
+  height: 84px;
   background: black;
-  div.title-header {
-    display: flex;
-    align-items: 'center';
-    justify-content: 'center';
-    height: 100%;
-    color: white;
-  }
+}
+
+div.black-box-container-top div.title-header {
+  display: flex;
+  align-items: 'center';
+  justify-content: 'center';
+  height: 100%;
+  color: white;
 }
