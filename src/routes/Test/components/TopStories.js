@@ -69,6 +69,7 @@ class TopStories extends Component {
 }
 
 const shortenString = (string, length) => {
+  if (!string) return 'loading...'
   if (string.length <= length) return string
   return `${string.slice(0, length - 3)}...`
 }

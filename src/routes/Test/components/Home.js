@@ -3,11 +3,14 @@ import {
     Container,
     Header,
     Grid,
+    Button
 } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 import ListOfStories from './ListOfStories'
 import TopStories from './TopStories'
+
+import { Link } from 'react-router'
 
 import './styles.scss'
 
@@ -27,14 +30,16 @@ class Home extends Component {
     ))
   }
   render () {
-    console.log(this.props)
-    const { newYorkTime } = this.props
+    // console.log('Home: ', this.props)
+    const { newYorkTime, route } = this.props
     return (
       <Grid style={{ paddingLeft: '10%', paddingRight: '10%' }}>
         <Grid.Row>
           <Container>
+            <Link to={`${route.path}/1`}> terefrf </Link>
+            <Button onClick={() => this.props.router.push(`${route.path}/1`)}>Test</Button>
             <Header as='h1'>Top Stories</Header>
-
+            
             <Grid>
               <TopStories
                 firstStory={newYorkTime[0]}

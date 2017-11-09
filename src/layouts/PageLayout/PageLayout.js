@@ -20,14 +20,12 @@ export const PageLayout = ({ children }) => (
         }}><h1>THE TIMES</h1></div>
       </div>
 
-      <div style={{ height: '52px', width: '100%', 
-         boxShadow : '0 1px 2px 0 rgba(34,36,38,.15)',
-        border: '1px solid rgba(34,36,38,.15)', marginBottom: '60px' }}>
-        <IndexLink to='/'>Home</IndexLink>
-        {' * '}
-        <Link to='/counter'>Counter</Link>
-        {' * '}
-        <Link to='/test'>test</Link>
+      <div
+        className='custom-navigation-container'
+        >
+        <IndexLink to='/' className='custom-item'>Home</IndexLink>
+        <Link to='/counter' className='custom-item'>Counter</Link>
+        <Link to='/test' className='custom-item'>test</Link>
       </div>
     </Container>
 
