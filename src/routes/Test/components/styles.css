@@ -10,7 +10,7 @@ div.custom-top-stories-container {
 
 div.custom-top-stories-container div.left {
   justify-content: flex-start;
-  width: 62%;
+  width: 61%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
@@ -57,7 +57,7 @@ div.custom-top-stories-container div.left div.bottom {
 
 div.custom-top-stories-container div.right {
   justify-content: flex-end;
-  width: 35%;
+  width: 36%;
 }
 
 div.custom-top-stories-container div.right div.custom-right-container {
@@ -72,13 +72,49 @@ div.custom-top-stories-container div.right div.custom-right-container div.top {
   box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
   border: 1px solid rgba(34, 36, 38, 0.15);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-div.custom-top-stories-container div.right div.custom-right-container div.bottom {
+div.custom-top-stories-container div.right div.custom-right-container div.top div.bottom-byline {
+  display: inline-block;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.top div.bottom-byline div.author {
+  color: #b0b2b2;
+  float: left;
+  margin-right: 5px;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.top div.bottom-byline div.time {
+  color: #0d3068;
+  float: right;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.bottom-third {
   height: 47%;
   box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
   border: 1px solid rgba(34, 36, 38, 0.15);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.bottom-third div.bottom-byline {
+  display: inline-block;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.bottom-third div.bottom-byline div.author {
+  color: #b0b2b2;
+  float: left;
+  margin-right: 5px;
+}
+
+div.custom-top-stories-container div.right div.custom-right-container div.bottom-third div.bottom-byline div.time {
+  color: #0d3068;
+  float: right;
 }
 
 div.ui.segment.custom-list-container {
