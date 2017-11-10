@@ -25,7 +25,7 @@ export const PageLayout = ({ children }) => (
         >
         <IndexLink to='/' className='custom-item'>Home</IndexLink>
         <Link to='/counter' className='custom-item'>Counter</Link>
-        <Link to='/test' className='custom-item'>test</Link>
+        {/* <Link to='/test' className='custom-item'>test</Link> */}
       </div>
     </Container>
 

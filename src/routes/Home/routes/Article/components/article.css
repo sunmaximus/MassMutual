@@ -1,0 +1,62 @@
+.navigation-font, div.top-navigation-container p.home, div.top-navigation-container p.arrow, div.top-navigation-container p.article {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+div.top-navigation-container {
+  display: flex;
+  flex-direction: row;
+}
+
+div.top-navigation-container p.home {
+  color: #429bd8;
+  margin-right: 10px;
+}
+
+div.top-navigation-container p.arrow {
+  color: #c7c7cc;
+  margin-right: 10px;
+}
+
+h1.custom-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.custom-byline {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-byline .bottom-byline {
+  display: inline-block;
+}
+
+.custom-byline .bottom-byline .author {
+  color: #b0b2b2;
+  float: left;
+  margin-right: 5px;
+}
+
+.custom-byline .bottom-byline .time {
+  color: #0d3068;
+  float: right;
+}
+
+.custom-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-content .image-item {
+  height: 158px;
+  width: 158px;
+}
+
+.custom-content .full-body-text {
+  padding: 0px 20px 0px 20px;
+  font-size: 16px;
+  font-weight: 500;
+}

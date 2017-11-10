@@ -9,15 +9,20 @@ import nyt from '../assets/nyt.png'
 
 class ListOfStories extends Component {
   static propTypes = {
-    story: PropTypes.object
+    story: PropTypes.object,
+    navigate: PropTypes.func
   }
 
   render () {
-    const { story } = this.props
+    const { story, navigate } = this.props
     if (story === undefined) return <div>loading..</div>
 
     return (
-      <Segment style={{ width: '100%', borderRadius: '0px', height: '208px' }} className='custom-list-container'>
+      <Segment
+        style={{ width: '100%', borderRadius: '0px', height: '208px' }}
+        className='custom-list-container'
+        onClick={navigate}
+      >
         <div className='custom-list'>
           <div className='custom-list-left-picture'>
             <Image src={story.multimedia.length === 0 ? nyt : `http://www.nytimes.com/${story.multimedia[1].url}`} />

@@ -8,16 +8,27 @@ class TopStories extends Component {
   static propTypes = {
     firstStory: PropTypes.object,
     secondStory: PropTypes.object,
-    thirdStory: PropTypes.object
+    thirdStory: PropTypes.object,
+    navigateToArticleOne: PropTypes.func,
+    navigateToArticleTwo: PropTypes.func,
+    navigateToArticleThree: PropTypes.func,
   }
   render () {
-    const { firstStory, secondStory, thirdStory } = this.props
+    const {
+      firstStory,
+      secondStory,
+      thirdStory,
+      navigateToArticleOne,
+      navigateToArticleTwo,
+      navigateToArticleThree
+    } = this.props
     let isLoading = true
     if (firstStory && secondStory && thirdStory) isLoading = false
 
     return (
       <div className='custom-top-stories-container' style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-        <div className='left'>
+        {/* **Left Top Story** */}
+        <div className='left' onClick={navigateToArticleOne}>
           <div className='top'>
             <div className='right'>
               <h2>{!isLoading ? shortenString(firstStory.headline.main, 60) : 'loading..'}</h2>
@@ -35,9 +46,10 @@ class TopStories extends Component {
           </div>
         </div>
 
+        {/* **Right Two Stories** */}
         <div className='right'>
           <div className='custom-right-container'>
-            <div className='top'>
+            <div className='top' onClick={navigateToArticleTwo}>
               <h2>{!isLoading ? shortenString(secondStory.headline.main, 56) : 'loading..'}</h2>
               {isLoading ? <div />
               : <div className='bottom-byline'>
@@ -49,7 +61,7 @@ class TopStories extends Component {
                 </div>
               </div>}
             </div>
-            <div className='bottom-third'>
+            <div className='bottom-third' onClick={navigateToArticleThree}>
               <h2>{!isLoading ? shortenString(thirdStory.headline.main, 56) : 'loading..'}</h2>
               {isLoading ? <div />
                 : <div className='bottom-byline'>
