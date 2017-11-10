@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 
-import newYorkTimeMiddleware from '../routes/Test/middleware/newYorkTimeMiddleware'
+import newYorkTimeMiddleware from '../routes/Home/middleware/newYorkTimeMiddleware'
 
 const createStore = (initialState = {}) => {
   // ======================================================
