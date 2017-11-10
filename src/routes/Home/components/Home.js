@@ -11,6 +11,19 @@ import TopStories from './TopStories'
 
 import './styles.scss'
 
+// window.onscroll = function (ev) {
+//   // if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+//   //   // you're at the bottom of the page
+//   //   console.log('Bottom of page')
+//   // }
+//   let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
+//   let scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight
+//   let clientHeight = document.documentElement.clientHeight || window.innerHeight
+//   let scrolledToBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight
+
+//   console.log('dd', scrollHeight, clientHeight, scrollTop, scrolledToBottom)
+// }
+
 class Home extends Component {
   static propTypes = {
     newYorkTime: PropTypes.array.isRequired,
@@ -19,6 +32,23 @@ class Home extends Component {
   }
   componentWillMount () {
     this.props.initializeNewYorkTime()
+    // window.removeEventListener('scroll', this.handleOnScroll)
+    window.onscroll = () => this.handleOnScroll()
+  }
+
+  handleOnScroll () {
+    // http://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
+    let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
+    let scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight
+    let clientHeight = document.documentElement.clientHeight || window.innerHeight
+    let scrolledToBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight
+
+    console.log('dd', scrollHeight, clientHeight, scrollTop, scrolledToBottom)
+
+    if (scrolledToBottom) {
+      console.log('Bottom of page')
+      this.props.initializeNewYorkTime()
+    }
   }
 
   renderStories () {

@@ -45,14 +45,18 @@ export const actions = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-export default function homeReducer (state = {}, action) {
+const initialReducer = {
+  docs: []
+}
+export default function homeReducer (state = initialReducer, action) {
   switch (action.type) {
     case INITIALIZE_NEW_YORK_TIME_DATA:
       return { ...state }
     case INITIALIZE_NEW_YORK_TIME_DATA_RECIEVED:
+      console.log(action.data.response)
       return {
         ...state,
-        ...action.data.response
+        docs: [...state.docs, ...action.data.response.docs]
       }
     default:
       return state
