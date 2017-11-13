@@ -11,7 +11,7 @@ const searchMiddleware = store => next => action => {
         if (err || !res.ok) {
           console.log('error')
         }
-        console.log(res.body.response.docs)
+        // console.log(res.body.response.docs)
         store.dispatch(searchReceived(res.body.response.docs))
       })
   } next(action)

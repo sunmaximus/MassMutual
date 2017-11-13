@@ -10,13 +10,13 @@ import SearchBox from './SearchBox/containers/SearchBoxContainer'
 
 import './PageLayout.scss'
 
-export const PageLayout = ({ children }) => (
+export const PageLayout = ({ children, router }) => (
   <Container>
     <Container>
       <div className='black-box-container-top'>
         <h1 className='center'>THE TIMES</h1>
         <div className='right'>
-          <SearchBox />
+          <SearchBox router={router} />
         </div>
       </div>
 
@@ -33,6 +33,7 @@ export const PageLayout = ({ children }) => (
 )
 PageLayout.propTypes = {
   children: PropTypes.node,
+  router: PropTypes.object
 }
 
 export default PageLayout

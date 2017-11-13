@@ -5,9 +5,10 @@ import { search } from '../modules/search'
 import SearchBox from '../components/SearchBox'
 // import { browserHistory } from 'react-router'
 
-// import { locationChange } from '../../../../store/location'
+import { locationChange } from '../../../../store/location'
 const mapDispatchToProps = {
   search,
+  locationChange
 //   browserHistory,
 //   locationChange
 }

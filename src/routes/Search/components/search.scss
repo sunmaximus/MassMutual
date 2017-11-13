@@ -1,0 +1,90 @@
+
+.navigation-font {
+    font-weight: bold;
+    font-size: 18px
+}
+
+div.top-navigation-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    p.home {
+        @extend .navigation-font;
+        color: rgb(66, 155, 216);
+        margin-right: 10px;
+    }
+    p.arrow {
+        @extend .navigation-font;
+        color: rgb(199, 199, 204);
+        margin-right: 10px;        
+    }
+    p.article {
+        @extend .navigation-font;
+    }
+}
+
+h1.custom-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-byline {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    .bottom-byline {
+        display: inline-block;
+        .author {
+            color: rgb(176, 178, 178); 
+            float: left;
+            margin-right: 5px;
+        }
+        .time {
+            color: rgb(13, 48, 104);
+            float: right;
+        }
+    }
+}
+
+.custom-content {
+    display: flex;
+    flex-direction: row;
+    .image-item { 
+        height: 158px;
+        width: 158px;
+    }
+    .full-body-text {
+        padding: 0px 20px 0px 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.article-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 150px;
+    border-top: 1px solid rgb(236, 236, 236);
+    display: flex;
+    flex-direction: row;
+
+    img {
+        width: 110px;
+        height: 110px;
+    }
+
+    // white-space: nowrap;
+    overflow: hidden;            
+    text-overflow: ellipsis;    
+
+    .content {
+        // white-space: nowrap;
+        overflow: hidden;            
+        text-overflow: ellipsis;  
+        padding-left: 30px;        
+        h5 { 
+            color: rgb(66, 155, 216);
+        }
+    }
+}

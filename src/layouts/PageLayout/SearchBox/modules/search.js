@@ -43,7 +43,7 @@ export default function searchReducer (state = initialReducer, action) {
     case SEARCH_RECIEVED:
       return {
         ...state,
-        docs: [...state.docs, ...action.data]
+        docs: [...action.data]
       }
     default:
       return state
