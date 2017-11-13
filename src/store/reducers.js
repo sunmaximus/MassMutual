@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux'
 import locationReducer from './location'
 
+import searchReducer from '../layouts/PageLayout/SearchBox/modules/search'
+
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     location: locationReducer,
+    search: searchReducer,
     ...asyncReducers,
   })
 }

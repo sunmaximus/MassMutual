@@ -5,12 +5,13 @@ import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 
 import newYorkTimeMiddleware from '../routes/Home/middleware/newYorkTimeMiddleware'
+import searchMiddleware from '../layouts/PageLayout/SearchBox/middleware/searchMiddleware'
 
 const createStore = (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const middleware = [thunk, newYorkTimeMiddleware]
+  const middleware = [thunk, newYorkTimeMiddleware, searchMiddleware]
 
   // ======================================================
   // Store Enhancers
