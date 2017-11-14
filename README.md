@@ -1,7 +1,7 @@
 # For MassMutual
 
-This is of course a boilerplate I got from the internet. Please read the instructions down below to run or just press 'yarn start' 
-or 'npm run start'
+This is of course a boilerplate I got from the internet. Please read the instructions down below to run or just type 
+`yarn` or `npm i` and then run `yarn start` or `npm run start`.
 
 # Deprecation Warning
 
