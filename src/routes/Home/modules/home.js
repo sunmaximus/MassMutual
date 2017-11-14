@@ -1,10 +1,13 @@
 import request from 'superagent'
+import moment from 'moment'
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const INITIALIZE_NEW_YORK_TIME_DATA = 'INITIALIZE_NEW_YORK_TIME_DATA'
 export const INITIALIZE_NEW_YORK_TIME_DATA_RECIEVED = 'INITIALIZE_NEW_YORK_TIME_DATA_RECIEVED'
 
+export const GET_NEW_DATA_ON_BOTTOM_SCROLL = 'GET_NEW_DATA_ON_BOTTOM_SCROLL'
+export const GET_NEW_DATA_ON_BOTTOM_SCROLL_RECEIVED = 'GET_NEW_DATA_ON_BOTTOM_SCROLL_RECEIVED'
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -19,6 +22,21 @@ export const initializeNewYorkTime = () => {
 export const initializeNewYorkTimeRecieved = (data) => {
   return {
     type: INITIALIZE_NEW_YORK_TIME_DATA_RECIEVED,
+    data
+  }
+}
+
+export const getNewDataOnBottomScroll = () => {
+  const API_KEY = 'a8457610b68381085a3fff38d6a36337:6:74255139'
+  return {
+    type: GET_NEW_DATA_ON_BOTTOM_SCROLL,
+    API_KEY
+  }
+}
+
+export const getNewDataOnBottomScrollReceived = (data) => {
+  return {
+    type: GET_NEW_DATA_ON_BOTTOM_SCROLL_RECEIVED,
     data
   }
 }
@@ -46,7 +64,9 @@ export const actions = {
 // Reducer
 // ------------------------------------
 const initialReducer = {
-  docs: []
+  docs: [],
+  startDate: moment(new Date()).subtract(7, 'days').format('YYYYMMDD'),
+  endDate: moment(new Date()).format('YYYYMMDD'),
 }
 export default function homeReducer (state = initialReducer, action) {
   switch (action.type) {
@@ -56,6 +76,15 @@ export default function homeReducer (state = initialReducer, action) {
       console.log(action.data.response)
       return {
         ...state,
+        startDate: moment(state.startDate).subtract(7, 'days').format('YYYYMMDD'),
+        endDate: state.startDate,
+        docs: [...state.docs, ...action.data.response.docs]
+      }
+    case GET_NEW_DATA_ON_BOTTOM_SCROLL_RECEIVED:
+      return {
+        ...state,
+        startDate: moment(state.startDate).subtract(7, 'days').format('YYYYMMDD'),
+        endDate: state.startDate,
         docs: [...state.docs, ...action.data.response.docs]
       }
     default:

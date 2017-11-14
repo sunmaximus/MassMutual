@@ -1,17 +1,17 @@
-import moment from 'moment'
-
 import {
     INITIALIZE_NEW_YORK_TIME_DATA,
+    GET_NEW_DATA_ON_BOTTOM_SCROLL,
     initializeNewYorkTimeRecieved,
+    getNewDataOnBottomScrollReceived,
     articleSearch
 } from '../modules/home'
 
 const newYorkTimeMiddleware = store => next => action => {
+  const { startDate, endDate } = store.getState().newYorkTimeReducer
+
   if (action.type === INITIALIZE_NEW_YORK_TIME_DATA) {
-    let todayDate = moment(new Date()).format('YYYYMMDD')
-    let startDate = moment(new Date()).subtract(7, 'days').format('YYYYMMDD')
     articleSearch(action.API_KEY)
-    .query({ begin_date: startDate, end_date: todayDate })
+    .query({ begin_date: startDate, end_date: endDate })
     .end(
       (err, res) => {
         if (err || !res.ok) {
@@ -20,6 +20,18 @@ const newYorkTimeMiddleware = store => next => action => {
         // console.log(res)
         store.dispatch(initializeNewYorkTimeRecieved(res.body))
       })
-  } next(action)
+  } else if (action.type === GET_NEW_DATA_ON_BOTTOM_SCROLL) {
+    articleSearch(action.API_KEY)
+    .query({ begin_date: startDate, end_date: endDate })
+    .end(
+      (err, res) => {
+        if (err || !res.ok) {
+          console.log('error')
+        }
+        // console.log(res)
+        store.dispatch(getNewDataOnBottomScrollReceived(res.body))
+      })
+  }
+  next(action)
 }
 export default newYorkTimeMiddleware

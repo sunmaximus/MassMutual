@@ -1,10 +1,15 @@
 import { connect } from 'react-redux'
 import Home from '../components/Home'
 
-import { initializeNewYorkTime } from '../modules/home'
+import { initializeNewYorkTime, getNewDataOnBottomScroll } from '../modules/home'
 
 const mapStateToProps = ({ newYorkTimeReducer }) => (
     { newYorkTime: newYorkTimeReducer.docs ? newYorkTimeReducer.docs : [] }
 )
 
-export default connect(mapStateToProps, { initializeNewYorkTime })(Home)
+// const mapDispatchToProps = {
+//   initializeNewYorkTime,
+//   getNewDataOnBottomScroll
+// }
+
+export default connect(mapStateToProps, { initializeNewYorkTime, getNewDataOnBottomScroll })(Home)

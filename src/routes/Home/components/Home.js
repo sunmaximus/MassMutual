@@ -28,14 +28,17 @@ class Home extends Component {
   static propTypes = {
     newYorkTime: PropTypes.array.isRequired,
     initializeNewYorkTime: PropTypes.func.isRequired,
-    router: PropTypes.object.isRequired
+    router: PropTypes.object.isRequired,
+    getNewDataOnBottomScroll: PropTypes.func.isRequired,
   }
   componentWillMount () {
-    this.props.initializeNewYorkTime()
-    // window.removeEventListener('scroll', this.handleOnScroll)
+    const { initializeNewYorkTime, router } = this.props
+    initializeNewYorkTime()
+    console.log('current location', router.getCurrentLocation())
     window.onscroll = () => this.handleOnScroll()
   }
 
+  // This will kick off when the page is being scroll all the way down at the bottom
   handleOnScroll () {
     // http://stackoverflow.com/questions/9439725/javascript-how-to-detect-if-browser-window-is-scrolled-to-bottom
     let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
@@ -44,10 +47,10 @@ class Home extends Component {
     let scrolledToBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight
 
     console.log('dd', scrollHeight, clientHeight, scrollTop, scrolledToBottom)
-
     if (scrolledToBottom) {
       console.log('Bottom of page')
-      this.props.initializeNewYorkTime()
+      // this.props.initializeNewYorkTime()
+      this.props.getNewDataOnBottomScroll()
     }
   }
 
@@ -58,7 +61,7 @@ class Home extends Component {
     ))
   }
   render () {
-    // console.log('Home: ', this.props)
+    console.log('Home: ', this.props, this.props.router.getCurrentLocation())
     const { newYorkTime } = this.props
     return (
       <Grid style={{ paddingLeft: '10%', paddingRight: '10%' }}>

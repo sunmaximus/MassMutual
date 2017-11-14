@@ -37,7 +37,7 @@ class Article extends Component {
           <p className='full-body-text'>{snippet}</p>
         </div>
         
-        {'Not sure if this even look good'}
+        {/* {'Not sure if this even look good'} */}
         <iframe src={web_url} style={{ width: '100%', height: '600px', marginTop: '50px' }} />
       </Container>
     )
