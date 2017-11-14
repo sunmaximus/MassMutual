@@ -27,7 +27,7 @@ export const initializeNewYorkTimeRecieved = (data) => {
 // Async Call
 // ------------------------------------
 export const articleSearch = (API_KEY) => request
-  .get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${API_KEY}`)
+  .get(`https://developer.nytimes.com/proxy/https/api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${API_KEY}`)
 
 export const actions = {
   initializeNewYorkTime,

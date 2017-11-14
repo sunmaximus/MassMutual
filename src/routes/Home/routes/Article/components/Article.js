@@ -21,10 +21,10 @@ class Article extends Component {
 
     if (!newYorkTime) return <div>loading...</div>
 
-    const { headline, byline, snippet, pub_date } = newYorkTime[params.id]
+    const { headline, byline, snippet, pub_date, web_url } = newYorkTime[params.id]
 
     return (
-      <Container style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+      <Container style={{ paddingLeft: '10%', paddingRight: '10%', marginBottom: '5%' }}>
         <div className='top-navigation-container'>
           <p onClick={() => this.props.router.goBack()} className='home'>Home</p>
           <p className='arrow'>></p>
@@ -36,6 +36,9 @@ class Article extends Component {
           <img src={checkIfPictureExist(newYorkTime[params.id])} className='image-item' />
           <p className='full-body-text'>{snippet}</p>
         </div>
+        
+        {'Not sure if this even look good'}
+        <iframe src={web_url} style={{ width: '100%', height: '600px', marginTop: '50px' }} />
       </Container>
     )
   }
