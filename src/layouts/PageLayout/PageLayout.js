@@ -24,8 +24,12 @@ export const PageLayout = ({ children, router }) => (
         className='custom-navigation-container'
         >
         <IndexLink to='/' className='custom-item'>Home</IndexLink>
-        <Link to='/counter' className='custom-item'>Counter</Link>
-        {/* <Link to='/test' className='custom-item'>test</Link> */}
+        <Link to='/world' className='custom-item'>World</Link>
+        <Link to='/us' className='custom-item'>U.S.</Link>
+        <Link to='/politics' className='custom-item'>Politics</Link>
+        <Link to='/ny' className='custom-item'>N.Y.</Link>
+        <Link to='/more' className='custom-item'>More</Link>
+        {/* <Link to='/counter' className='custom-item'>Counter</Link> */}
       </div>
     </Container>
     {children}

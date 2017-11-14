@@ -4,6 +4,12 @@ import Home from './Home'
 import CounterRoute from './Counter'
 import Article from './Home/routes/Article'
 import Search from './Search'
+
+import World from './World'
+import US from './US'
+import Politics from './Politics'
+import NY from './NY'
+import More from './More'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -14,6 +20,11 @@ export const createRoutes = (store) => ({
   childRoutes : [
     Search(store),
     CounterRoute(store),
+    World(),
+    US(),
+    Politics(),
+    NY(),
+    More(),
     Article(store),
   ]
 })
